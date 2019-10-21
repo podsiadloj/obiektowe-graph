@@ -21,6 +21,12 @@ public class Main {
             "rez(3x5)erw(2x10)ac(3x3)ja(1x2)\n" +
             "dow(2x2)od(1x2)\n";
         Reader reader = new ReaderImpl();
-        reader.read(input);
+        Graph g = reader.read(input);
+        Vertex[] path = new GraphProcessorImpl().findShortest(g, 1, 6);
+        System.out.println("\nRESULTS:");
+        for (Vertex vertex: path) {
+            int number = g.vertices.indexOf(vertex) + 1;
+            System.out.println("vertex " + number + ": " + vertex.content);
+        }
     }
 }

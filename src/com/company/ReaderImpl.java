@@ -48,6 +48,7 @@ public class ReaderImpl implements Reader {
             }
         }
         System.out.println(content);
+        System.out.println(content.length());
         return new Vertex(content);
     }
 
